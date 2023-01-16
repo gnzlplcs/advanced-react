@@ -1,6 +1,6 @@
 # Advanced React Notes
 
-Notes from Scrimba's course Advanced React, by Bob Ziroll
+Notes from [Scrimba's course Advanced React](https://scrimba.com/learn/react), by Bob Ziroll
 
 ## sources
 
