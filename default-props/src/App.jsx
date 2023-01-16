@@ -1,12 +1,13 @@
 import React from "react"
 import Card from "./Card"
+import './App.css'
 
 function App() {
     return (
         <div>
-            <Card cardColor="red" />
-            <Card cardColor="blue" />
-            <Card cardColor="green" />
+            <Card cardColor="turquoise" height={150} />
+            <Card />
+            <Card cardColor="rebeccapurple" />
         </div>
     )
 }
