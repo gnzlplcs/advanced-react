@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import PropTypes from 'prop-types'
 
 /**
  * Challenge: Here's a component meant to take an image (`src` prop) and round the edges.
@@ -21,8 +22,13 @@ function RoundedImg(props) {
     )
 }
 
+RoundedImg.propTypes = {
+    src: PropTypes.string.isRequired,
+    borderRadius: PropTypes.oneOf(['string', 'number'])
+}
+
 RoundedImg.defaultProps = {
-    
+    borderRadius: "50%"
 }
 
 export default RoundedImg
