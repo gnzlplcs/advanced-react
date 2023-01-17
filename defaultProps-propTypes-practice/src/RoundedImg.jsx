@@ -21,4 +21,8 @@ function RoundedImg(props) {
     )
 }
 
+RoundedImg.defaultProps = {
+    
+}
+
 export default RoundedImg
