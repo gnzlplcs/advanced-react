@@ -16,3 +16,17 @@ Notes from [Scrimba's course Advanced React](https://scrimba.com/learn/react), b
 + children
 + high-order components
 + render props
+
+## high-order components
+
++ high-order functions take other functions as arguments
++ high-order component takes a component as its first argument and returns a new component that wraps the given component, providing extra capabilities to it.
+
+```js
+const upgradedComponent = withSuperPowers(Component)
+export default upgradedComponent
+
+// it's a convention starts with HOC "with"
+const componentWithToggle = withToggle(Component)
+export default componentWithToggle
+```
