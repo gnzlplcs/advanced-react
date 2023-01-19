@@ -1,9 +1,12 @@
 import React from "react"
+import { withFavoriteNumber } from "./withFavoriteNumber"
 
 function App(props) {
     return (
-        <div>Hello world!</div>
+        <div>{props.favoriteNumber}</div>
     )
 }
 
-export default App
+const FavoriteNumberComponent = withFavoriteNumber(App)
+
+export default FavoriteNumberComponent
