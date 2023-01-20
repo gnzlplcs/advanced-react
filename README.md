@@ -6,6 +6,9 @@ Notes from [Scrimba's course Advanced React](https://scrimba.com/learn/react), b
 
 + [React Prop Types](https://reactjs.org/docs/typechecking-with-proptypes.html#proptypes)
 + [composition > inheritance](https://www.youtube.com/watch?v=wfMtDGfHWpA)
++ [great explanation of HOCs](https://www.richardkotze.com/coding/understanding-higher-order-components)
++ [React docs on HOCs](https://reactjs.org/docs/higher-order-components.html)
++ [V school writeup on HOCs](https://coursework.vschool.io/hocs/)
 
 ## reusability
 
