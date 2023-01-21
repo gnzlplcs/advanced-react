@@ -1,15 +1,15 @@
-import React from "react"
-import Menu from "./Menu"
-import Favorite from "./Favorite"
+import React from "react";
+import Menu from "./Menu";
+import Favorite from "./Favorite";
 
 function App() {
-    return (
-        <div>
-            <Menu something="whatever" />
-            <hr />
-            <Favorite />
-        </div>
-    )
+  return (
+    <div>
+			<Menu />
+      <hr />
+      <Favorite />
+    </div>
+  );
 }
 
-export default App
+export default App;

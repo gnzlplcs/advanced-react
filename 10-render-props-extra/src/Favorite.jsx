@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import withToggler from "./HOCs/withToggler";
+import Toggler from "./Toggler";
 
 const Favorite = (props) => {
   return (
-    <div>
-      <h3>Click heart to favorite</h3>
-      <h1>
-        <span onClick={props.toggle}>{props.on ? "❤️" : "♡"}</span>
-      </h1>
-    </div>
+    <Toggler
+      render={({on, toggle}) => (
+        <div>
+          <h3>Click heart to favorite</h3>
+          <h1>
+            <span onClick={toggle}>{on ? "❤️" : "♡"}</span>
+          </h1>
+        </div>
+      )}
+    />
   );
 };
 
-const superchargedFavoriteComponent = withToggler(Favorite, {
-  defaultOnValue: false,
-});
-
-export default superchargedFavoriteComponent;
+export default Favorite;

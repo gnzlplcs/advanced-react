@@ -1,20 +1,29 @@
 import React, { Component } from "react";
-import withToggler from "./HOCs/withToggler";
+import Toggler from "./Toggler";
+
+// bring in the Toggler component
+// render the Toggler inside the Menu, and use the render prop to determine what will get displayed
+// remember to bring in the "goodies" (state and methods) to that function so you can make this work
+
 
 const Menu = (props) => {
   return (
-    <div>
-      <button onClick={props.toggle}>{props.on ? "Hide" : "Show"} Menu</button>
-      <nav style={{ display: props.on ? "block" : "none" }}>
-        <h6>Signed in as Coder123</h6>
-        <p><a>Your Profile</a></p>
-        <p><a>Your Repositories</a></p>
-        <p><a>Your Stars</a></p>
-        <p><a>Your Gists</a></p>
-      </nav>
-    </div>
+		<Toggler
+			defaultOnValue={true}
+			render={({on, toggle}) => (
+				<div>
+					<button onClick={toggle}>{on ? "Hide" : "Show"} Menu</button>
+					<nav style={{ display: on ? "block" : "none" }}>
+						<h6>Signed in as Coder123</h6>
+						<p><a>Your Profile</a></p>
+						<p><a>Your Repositories</a></p>
+						<p><a>Your Stars</a></p>
+						<p><a>Your Gists</a></p>
+					</nav>
+				</div>
+			)}
+		/>
   );
 };
 
-const superchargedMenuComponent = withToggler(Menu, { defaultOnValue: true });
-export default superchargedMenuComponent;
+export default Menu;
