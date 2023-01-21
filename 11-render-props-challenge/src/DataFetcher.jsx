@@ -26,7 +26,7 @@ class DataFetcher extends Component {
   }
 
   render() {
-    // console.log(this.state.loading, this.state.data)
+    const { data, loading } = this.state;
     return (
       /**
       Part 1: Figure out what you're returning here. You should pass the loading state and the data state through to the component needing it.
@@ -35,12 +35,7 @@ class DataFetcher extends Component {
 
       Also, there's more than one "correct" way to make use of the render props pattern. Check App.js to determine which way it's being implemented in this challenge.
       */
-      <div>
-        {this.props.render({
-          loading: this.state.loading,
-          data: this.state.data
-        })}
-      </div>
+      this.props.children({ data, loading })
     );
   }
 }
