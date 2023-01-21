@@ -33,3 +33,9 @@ export default upgradedComponent
 const componentWithToggle = withToggle(Component)
 export default componentWithToggle
 ```
+
+## React's tree rendering
+
++ React recursively renders components down one branch until there are no more to render
++ changes to state or props in any component will recursively re-render down the remaining tree whether those components have changed or not
++ `shouldComponentUpdate()`, `React.PureComponent`, and `React.memo()` are tools to help fix this problem
