@@ -39,3 +39,11 @@ export default componentWithToggle
 + React recursively renders components down one branch until there are no more to render
 + changes to state or props in any component will recursively re-render down the remaining tree whether those components have changed or not
 + `shouldComponentUpdate()`, `React.PureComponent`, and `React.memo()` are tools to help fix this problem
+
+## `shouldComponentUpdate()`
+
++ lifecycle method on class components
++ allows you to determine if a component should update or not
++ receive the upcoming props and state so you can compare them against current props and state
++ return `true` for "yes", `false` for "no"
++ do not do deep equality checks in here
