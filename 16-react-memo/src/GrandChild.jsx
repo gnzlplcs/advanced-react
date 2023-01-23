@@ -1,14 +1,12 @@
-import React, {Component} from "react"
+import React from "react";
 
-class GrandChild extends Component {
-    render() {
-        console.log("[ ]   [ ]   [ ]   [👶🏻] rendered")
-        return (
-            <div>
-                <p>I'm a GrandChild Component</p>
-            </div>
-        )
-    }
-}
+const GrandChild = () => {
+  console.log("[ ]   [ ]   [ ]   [👶🏻] rendered");
+  return (
+    <div>
+      <p>I'm a GrandChild Component</p>
+    </div>
+  );
+};
 
-export default GrandChild
+export default GrandChild;
