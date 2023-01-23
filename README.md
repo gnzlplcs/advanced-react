@@ -47,3 +47,11 @@ export default componentWithToggle
 + receive the upcoming props and state so you can compare them against current props and state
 + return `true` for "yes", `false` for "no"
 + do not do deep equality checks in here
+
+## `React.PureComponent`
+
++ it's an alternative to `React.Component`
++ automatically implements `shouldComponentUpdate()` for shallow props and state comparison
++ disallows using `shouldComponentUpdate()` manually
++ skips rendering all children in the tree automatically, so they must be "pure" as well
++ generally preferred over `shouldComponentUpdate()`
