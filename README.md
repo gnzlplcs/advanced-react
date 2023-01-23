@@ -55,3 +55,11 @@ export default componentWithToggle
 + disallows using `shouldComponentUpdate()` manually
 + skips rendering all children in the tree automatically, so they must be "pure" as well
 + generally preferred over `shouldComponentUpdate()`
+
+## `React.memo()`
+
++ it's like a `React.PureComponent` to use in function components
++ higher-order component built by React (released in v16.6)
++ it only compares `prevProps` and `nextProps` (no state checking)
++ it's possible to optionally implement your own checking function to determine if it should use the memoized result
+  + this function is _kind of like_ `shouldComponentUpdate()`, except it should return `true` if the props are equal and `false` if they aren't. this is effectively the opposite approach of `shoulComponentUpdate()`, which returns `true` if the component should re-render (i.e. props are different).

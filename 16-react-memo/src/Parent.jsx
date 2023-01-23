@@ -1,7 +1,7 @@
 import React from "react";
 import Child from "./Child";
 
-const Parent = () => {
+const Parent = (props) => {
   console.log("[ ]   [👩🏼‍⚕️]   [ ]   [ ] rendered");
   return (
     <div>
@@ -12,4 +12,4 @@ const Parent = () => {
   );
 };
 
-export default Parent;
+export default React.memo(Parent);

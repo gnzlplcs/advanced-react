@@ -1,7 +1,7 @@
 import React from "react";
 import GrandChild from "./GrandChild";
 
-const Child = () => {
+const Child = (props) => {
   console.log("[ ]   [ ]   [🧒🏻]   [ ] rendered");
   return (
     <div>
@@ -12,4 +12,4 @@ const Child = () => {
   );
 };
 
-export default Child;
+export default React.memo(Child);
