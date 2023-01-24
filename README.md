@@ -63,3 +63,8 @@ export default componentWithToggle
 + it only compares `prevProps` and `nextProps` (no state checking)
 + it's possible to optionally implement your own checking function to determine if it should use the memoized result
   + this function is _kind of like_ `shouldComponentUpdate()`, except it should return `true` if the props are equal and `false` if they aren't. this is effectively the opposite approach of `shoulComponentUpdate()`, which returns `true` if the component should re-render (i.e. props are different).
+
+## React Context
+
++ React Context solves the prop-drilling situation
++ Context provide a way to pass data through the component tree without having to pass props down manually at every level
