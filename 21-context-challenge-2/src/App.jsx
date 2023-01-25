@@ -1,22 +1,27 @@
-import React from "react"
+import React from "react";
+import Header from "./Header";
+import UserContext from "./userContext";
 
-import Header from "./Header"
-import UserContext from "./userContext"
+/**
+ * Challenge:
+ *
+ * 1. Convert App and Header back into functional components
+ * 2. Use UserContext.Consumer to consume the username context in both places
+ */
 
-class App extends React.Component {
-    static contextType = UserContext
+const App = () => {
+  return (
+    <div>
+      <Header />
+      <UserContext.Consumer>
+        {(user) => (
+          <main>
+            <p className="main">No new notifications, {user}! 🎉</p>
+          </main>
+        )}
+      </UserContext.Consumer>
+    </div>
+  );
+};
 
-    render() {
-        const username = this.context
-        return (
-            <div>
-                <Header />
-                <main>
-                    <p className="main">No new notifications, {username}! 🎉</p>
-                </main>
-            </div>
-        )
-    }
-}
-
-export default App
+export default App;

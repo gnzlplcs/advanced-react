@@ -1,17 +1,15 @@
-import React, {Component} from "react"
-import UserContext from "./userContext"
+import React from "react";
+import UserContext from "./userContext";
+UserContext;
 
-class Header extends Component {
-    static contextType = UserContext
+const Header = () => {
+  return (
+    <header>
+      <UserContext.Consumer>
+        {(user) => <p>Welcome, {user}!</p>}
+      </UserContext.Consumer>
+    </header>
+  );
+};
 
-    render() {
-        const username = this.context
-        return (
-            <header>
-                <p>Welcome, {username}!</p>
-            </header>
-        )
-    }
-}
-
-export default Header
+export default Header;
