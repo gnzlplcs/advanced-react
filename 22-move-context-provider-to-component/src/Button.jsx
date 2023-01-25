@@ -1,15 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import ThemeContext from "./themeContext"
+import React from "react";
+import { ThemeContextConsumer } from "./themeContext";
 
-function Button(props) {
-    return (
-        <ThemeContext.Consumer>
-            {theme => (
-                <button className={`${theme}-theme`}>Switch Theme</button>
-            )}
-        </ThemeContext.Consumer>
-    )
-}
+const Button = () => (
+  <ThemeContextConsumer>
+    {(theme) => <button className={`${theme}-theme`}>Switch Theme</button>}
+  </ThemeContextConsumer>
+);
 
-export default Button
+export default Button;
