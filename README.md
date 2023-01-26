@@ -9,6 +9,9 @@ Notes from [Scrimba's course Advanced React](https://scrimba.com/learn/react), b
 + [great explanation of HOCs](https://www.richardkotze.com/coding/understanding-higher-order-components)
 + [React docs on HOCs](https://reactjs.org/docs/higher-order-components.html)
 + [V school writeup on HOCs](https://coursework.vschool.io/hocs/)
++ [Before you use Context](https://reactjs.org/docs/context.html#before-you-use-context)
++ [React Context Caveats](https://reactjs.org/docs/context.html#caveats)
++ [React Context and re-renders: React take the wheel](https://medium.com/@ryanflorence/react-context-and-re-renders-react-take-the-wheel-cd1d20663647)
 
 ## reusability
 
@@ -68,3 +71,10 @@ export default componentWithToggle
 
 + React Context solves the prop-drilling situation
 + Context provide a way to pass data through the component tree without having to pass props down manually at every level
+
+### caveats
+
++ do not use context just to avoid prop drilling a layer or two down
++ do not use context for state that should just be kept locally (e.g. forms)
++ wrap the Provide around the lowest common parent in the tree
++ passing object as value, watch performance and refactor if necessary
