@@ -1,47 +1,55 @@
-import React from "react"
+import React, { Component } from "react";
 
-import Header from "./Header"
-import UserContext from "./userContext"
+import Header from "./Header";
+import { UserContextConsumer } from "./userContext";
 
-function App() {
+class App extends Component {
+  state = {
+    newUsername: "",
+  };
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  render() {
     return (
-        <div>
-            <Header />
+      <div>
+        <Header />
+        <UserContextConsumer>
+          {({ username, changeUsername }) => (
             <main>
-                <UserContext.Consumer>
-                    {username => (
-                        <p className="main">No new notifications, {username}! 🎉</p>
-                    )}
-                </UserContext.Consumer>
-            </main>
-
-            {
-                /**
-                 * Challenge: Add the ability for the user to choose a new username
-                 *
-                 * 1. Add state to this component to hold the new username in a controlled form
-                 * (https://reactjs.org/docs/forms.html#controlled-components)
-                 * (https://scrimba.com/p/p7P5Hd/cW8Jdfy)
-                 *
-                 * 2. Change userContext into a component that has state and provides the ability
-                 * to change the user's username. Make sure to export the provider and consumer
-                 * as named exports and update their uses anywhere else in the app
-                 *
-                 * 3. Give this App component the ability to update the username in context when the
-                 * button is clicked
-                 */
-            }
-            <input
+              <p className="main">No new notifications, {username}! 🎉</p>
+              <input
                 type="text"
-                name="username"
+                name="newUsername"
                 placeholder="New username"
-                // value={???}
-                // onChange={???}
-            />
-            <button onClick={null}>Change Username</button>
+                value={this.state.newUsername}
+                onChange={this.handleChange}
+              />
+              <button onClick={() => changeUsername(this.state.newUsername)}>Change Username</button>
+            </main>
+          )}
+        </UserContextConsumer>
 
-        </div>
-    )
+        {/**
+         * Challenge: Add the ability for the user to choose a new username
+         *
+         * 1. Add state to this component to hold the new username in a controlled form
+         * (https://reactjs.org/docs/forms.html#controlled-components)
+         * (https://scrimba.com/p/p7P5Hd/cW8Jdfy)
+         *
+         * 2. Change userContext into a component that has state and provides the ability
+         * to change the user's username. Make sure to export the provider and consumer
+         * as named exports and update their uses anywhere else in the app
+         *
+         * 3. Give this App component the ability to update the username in context when the
+         * button is clicked
+         */}
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;

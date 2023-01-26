@@ -1,16 +1,14 @@
-import React from "react"
-import UserContext from "./userContext"
+import React from "react";
+import { UserContextConsumer } from "./userContext";
 
 function Header() {
-    return (
-        <header>
-            <UserContext.Consumer>
-                {username => (
-                    <p>Welcome, {username}!</p>
-                )}
-            </UserContext.Consumer>
-        </header>
-    )
+  return (
+    <header>
+      <UserContextConsumer>
+        {({username}) => <p>Welcome, {username}!</p>}
+      </UserContextConsumer>
+    </header>
+  );
 }
 
-export default Header
+export default Header;
